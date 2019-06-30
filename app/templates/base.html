@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Google Map Scraper</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='lib/bootstrap-4.1.3/css/bootstrap.min.css') }}">
+
+    <!--Jquery-->
+    <script src="{{ url_for('static', filename='lib/jquery-3.3.1.min.js') }}"></script>
+
+    <!--Bootstrap JS-->
+    <script src="{{ url_for('static', filename='lib/bootstrap-4.1.3/js/bootstrap.min.js') }}"></script>
+
+    <!--Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&libraries=places"></script></head>
+
+    <!--Custom Scripts-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+<body>
+{% block body %}
+{% endblock %}
+</body>
+</html>

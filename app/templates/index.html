@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block body %}
+<section id="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Google Map Scraper</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Nearby Search <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Place ID</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</section>
+<section id="header2">
+    <!-- Just an image -->
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <div class="container">
+        <span class="navbar-text">
+            Select Latitude and Longitude on the map
+        </span>
+            <form class="form-inline" autocomplete="off">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="placeSearch">
+                <input class="form-control mr-sm-2" type="text" placeholder="Business Type" list="businessList" id="businessType">
+                <datalist id="businessList">
+                    {% for bus in business_type %}
+                    <option value="{{bus}}"/>
+                    {% endfor %}
+                </datalist>
+                <input class="form-control mr-sm-2 radius" type="number" placeholder="radius" aria-label="Search" id="radius">
+                <button class="btn btn-outline-success" type="button" id="scrapDataBtn">Scrap Data</button>
+                <button class="btn btn-outline-success" type="button" id="clearMarker" style="margin-left: 5px;">Clear</button>
+            </form>
+        </div>
+    </nav>
+</section>
+<section id="mainContent">
+    <div id="loader">
+        <div class="pageLoader"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

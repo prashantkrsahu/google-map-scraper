@@ -9,6 +9,12 @@ Google Map API key
 
 If you don't have python install on your machine you can get it from [here](https://www.python.org/downloads/f).
 Get Google map api key from [here](https://developers.google.com/maps/documentation/javascript/get-api-key).
+   
+# Add Google Map API Key and App Secret to Environment Variable
+Add google map api key and app secret to your environment variable.
+
+    export GOOGlE_API_KEY="YOUR API KEY"
+    export GOOGLE_SCRAPER_SECRET="YOUR APP SECRET"
 
 ## How to Setup
 
@@ -18,10 +24,8 @@ Get Google map api key from [here](https://developers.google.com/maps/documentat
     $ cd google-map-scraper
     $ pip install -r requirements.txt
     $ python manage.py
+
    
-# Add Google Map API Key
-Open const.py file and put GOOGlE_API_KEY = "<Google Map API Key>".
-Save the file and run the project
 ## 
     $ python manage.py
     Open http://127.0.0.1:5000/ in your brawser

@@ -18,8 +18,8 @@ class GenerateCSV:
         self.places = place_details
 
     def write_to_csv(self):
-        csv_file_name = f"data_out_{utils.generate_timestamp_file_name()}.csv"
-        with open(csv_file_name, mode='a', newline="", encoding='utf-8') as data_out:
+        # csv_file_name = f"data_out_{utils.generate_timestamp_file_name()}.csv"
+        with open(utils.create_tmp_file(), mode='a', newline="", encoding='utf-8') as data_out:
             field_name = const.DATA_OUT_FIELDNAME + const.OPENING_DAYS
             csv_writer = csv.DictWriter(data_out, fieldnames=field_name)
             csv_writer.writeheader()
